@@ -13,20 +13,18 @@ public class FrameDemo {
 
 		JFrame frame = new JFrame("FrameDemo");
 		JLabel label = new JLabel("hello");
-		
-		frame.getContentPane().add(label,BorderLayout.CENTER);
-		
-		frame.addWindowListener(new MyHandler());
-		frame.setLocation(1000, 0);
+
+		frame.getContentPane().add(label, BorderLayout.CENTER);
+
+		frame.addWindowListener(new WindowAdapter() {
+
+			@Override
+			public void windowClosing(WindowEvent e) {
+
+				System.exit(0);
+			}
+		});
 		frame.pack();
 		frame.setVisible(true);
-	}
-}
-
-class MyHandler extends WindowAdapter{
-	@Override
-	public void windowClosing(WindowEvent e) {
-
-		System.exit(0);
 	}
 }

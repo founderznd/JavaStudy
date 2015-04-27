@@ -3,26 +3,25 @@ package javastudy.exception;
 public class ExceptionTest2 {
 
 	public void method() throws Exception {
-		
+
 		System.out.println("hello world");
-		
+
 		throw new Exception();
 	}
-	
+
 	public static void main(String[] args) {
-		 
+
 		ExceptionTest2 test = new ExceptionTest2();
-		
+
 		try {
-			
+
 			test.method();
-		} 
+		}
 		catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 		}
-		finally{
-			
+		finally {
+
 			System.out.println("aaa");
 		}
 	}

@@ -37,7 +37,6 @@ class st {
 
 	public st() {
 
-		// TODO Auto-generated constructor stub
 		num = 0;
 		str = "dfs";
 	}
