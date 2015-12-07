@@ -1,5 +1,6 @@
 package javastudy.exception;
 
+@SuppressWarnings("serial")
 public class MyException2 extends Exception {
 
 	

@@ -1,8 +1,4 @@
-/**
- * @author Nandi Zhou
- * 2015年4月25日
- * 序列化和反序列化
- */
+
 package javastudy.io;
 
 import java.io.FileInputStream;
@@ -42,6 +38,7 @@ public class SerializableTest1 {
 	}
 }
 
+@SuppressWarnings("serial")
 class Son implements Serializable {
 
 	int			  age;
@@ -56,13 +53,7 @@ class Son implements Serializable {
 	}
 }
 
-/**
- * 为什么本地内部类能够正确读取到数据，继承其他包的类就不行呢？？？？？？<br>
- * 虽然不知道具体什么原因，但是问题应该出在继承其他包的类时，必须要实现: <br>
- * private void writeObject(java.io.ObjectOutputStream out) throws<br>
- * IOException private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException<br>
- * 这两个函数
- */
+@SuppressWarnings("serial")
 class Son2 extends Person implements Serializable {
 
 	public Son2(int age, String name, double height) {

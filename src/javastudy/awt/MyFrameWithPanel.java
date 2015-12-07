@@ -5,6 +5,7 @@ import java.awt.Frame;
 import java.awt.Panel;
 
 
+@SuppressWarnings("serial")
 public class MyFrameWithPanel extends Frame {
 
 	

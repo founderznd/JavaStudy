@@ -20,6 +20,7 @@ public class AnonymousInnerClassTest {
 		return d.toLocaleString();
 	}
 
+	@SuppressWarnings("serial")
 	public static void main(String[] args) {
 
 		AnonymousInnerClassTest test = new AnonymousInnerClassTest();

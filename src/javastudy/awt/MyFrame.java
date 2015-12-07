@@ -3,6 +3,7 @@ package javastudy.awt;
 import java.awt.Color;
 import java.awt.Frame;
 
+@SuppressWarnings("serial")
 public class MyFrame extends Frame {
 
 	public MyFrame(String title) {
