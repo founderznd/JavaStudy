@@ -1,8 +1,5 @@
 package javastudy.designpatter;
 
-/*
- * µ¥ÀıÄ£Ê½ Singleton: Ò»¸öÀàÖ»»áÉú³ÉÎ¨Ò»µÄÒ»¸ö¶ÔÏó¡£
- */
 public class SingletonTest {
 
 	public static void main(String[] args) {
@@ -11,24 +8,43 @@ public class SingletonTest {
 		Singleton singleton2 = Singleton.getInstance();
 
 		System.out.println(singleton == singleton2);
+
+		//å¤šçº¿ç¨‹é—®é¢˜
+		new Thread(new MyThread()).start();
+		new Thread(new MyThread()).start();
 	}
 }
 
 /*
- * ÔÚSingletonÀïÃæÉùÃ÷Ò»¸öprivate static ¶ÔÏó
- * ¶¨ÒåÒ»¸ögetInstance·½·¨£¬È¡³ö¸Ã¶ÔÏó¡£
- * ÕâÑùµÄ½á¹û£ºÎŞÂÛÉú³É¶àÉÙ¸ÃÀàµÄ¶ÔÏó£¬ËûµÄ¶ÔÏó¶¼Ö¸Ïò¸ÃÀàµÄµÄprivate¾²Ì¬¶ÔÏó¡£
+ * å•ä¾‹æ¨¡å¼
  */
 class Singleton {
 
-	private static Singleton singleton = new Singleton();
+	private static Singleton singleton;
 
 	private Singleton() {
 
 	}
 
-	public static Singleton getInstance() {
+	/*
+	 * ç½‘ä¸Šæ€»è¯´ å•ä¾‹æ¨¡å¼ çš„å¤šçº¿ç¨‹é—®é¢˜ã€‚ã€‚ã€‚ã€‚ã€‚
+	 * æš‚æ—¶æ²¡æœ‰é‡åˆ°
+	 * ä½†ä¸ç®¡æ€ä¹ˆæ ·ï¼Œç»™getInstance()åŠ ä¸Šçº¿ç¨‹é”ï¼Œå¯ä»¥é¿å…è¿™æ ·çš„é—®é¢˜ã€‚
+	 */
+	public static synchronized Singleton getInstance() {
 
+		if (null == singleton) {
+			singleton = new Singleton();
+		}
 		return singleton;
+	}
+}
+
+class MyThread implements Runnable {
+
+	@Override
+	public void run() {
+
+		System.out.println(Singleton.getInstance());
 	}
 }
