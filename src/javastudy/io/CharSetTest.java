@@ -16,7 +16,7 @@ public class CharSetTest {
 		//Map的遍历  推荐使用下面的方法
 		for (Entry<String, Charset> entry : Charset.availableCharsets().entrySet()) {
 
-			System.out.println(entry.getKey());
+			System.out.println(entry.getKey() + " " + entry.getValue());
 		}
 	}
 }

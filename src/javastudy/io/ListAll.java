@@ -54,7 +54,7 @@ public class ListAll {
 
 	public static void main(String[] args) {
 
-		File filePath = new File("G:/¶¯Âþ");
+		File filePath = new File("C:/Users/Administrator/Dropbox/Workshop/JavaStudy");
 		listAll(filePath);
 	}
 }

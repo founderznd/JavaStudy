@@ -32,7 +32,7 @@ public class FileTest6 {
 
 	public static void main(String[] args) {
 
-		File f = new File("d:/test");
+		File f = new File("C:/Users/Administrator/Desktop/test1 - ¸±±¾");
 		delDir(f);
 	}
 }
